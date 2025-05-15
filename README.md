@@ -42,11 +42,21 @@ main.py  主入口
 
 ## 安装与使用
 
-克隆仓库：git clone [repo-url]
+克隆仓库：
+
+```shell
+git clone https://github.com/luckyNwa6/FlaskAIChat.git
+```
 
 启动本地服务
 
-访问index.html即可体验
+![1](./static/imgs/1.png)
+
+
+
+![2](./static/imgs/2.png)
+
+![3](./static/imgs/3.png)
 
 ## 未来扩展
 
