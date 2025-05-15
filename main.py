@@ -1,4 +1,5 @@
 import json
+import os
 
 from flask import Flask, request, render_template, redirect, url_for, flash, jsonify, Response
 import requests
@@ -6,10 +7,11 @@ import requests
 from werkzeug.security import generate_password_hash, check_password_hash
 
 app = Flask(__name__)
+app.secret_key = os.environ.get('FLASK_SECRET_KEY') or os.urandom(16)
 
 password_hash = generate_password_hash('Nwa741741')
-
-API_KEY = "sk-"
+# https://portal.qiniu.com/ai-inference/model 孩子们自己去申请一下 免费3个月deepseek 去申请个key替换下面
+API_KEY = "sk-29560a2015b2497b70ecd32134c0b0d9140e021fc0dae00b4a26ee4ddc585956"
 url = "https://api.qnaigc.com/v1/chat/completions"
 
 @app.route('/')

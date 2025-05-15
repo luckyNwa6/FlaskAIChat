@@ -20,16 +20,21 @@
 
 ## 文件结构
 
-
 /static
 ├── css          # css文件夹
 ├── js             # js文件夹
 └── imgs       # imgs文件夹
 
+/templates
+├── home.html       # 聊天室页
+├── index.html       # 首页
+└── login.html        # 登录
+
+main.py  主入口
+
 ## 特色实现
 
 动态消息渲染：addMessage()函数智能区分用户/AI消息
-内容解析引擎：自动转换Markdown为HTML元素
 交互优化：
 发送按钮状态管理
 回车键快捷发送
