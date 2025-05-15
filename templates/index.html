@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI聊天室</title>
+    <link rel="shortcut icon" href="../static/favicon.ico">
+    <link href="../static/css/bootstrap.css" rel="stylesheet">
+    <style>
+        body {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        .container {
+            background-color: rgba(255, 255, 255, 0.9);
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            padding: 3rem;
+            text-align: center;
+
+        }
+
+        h1 {
+            color: #333;
+            margin-bottom: 2rem;
+            font-weight: 700;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+        }
+
+        .btn-primary {
+            background-color: #667eea;
+            border: none;
+            padding: 12px 30px;
+            font-size: 1.1rem;
+            border-radius: 50px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+        }
+
+        .btn-primary:hover {
+            background-color: #5a6fd1;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(102, 126, 234, 0.6);
+        }
+
+        .ai-icon {
+            font-size: 5rem;
+            margin-bottom: 1.5rem;
+            color: #667eea;
+        }
+
+        .welcome-text {
+            margin-top: 88px;
+            color: #666;
+            margin-bottom: 66px;
+            font-size: 1.5rem;
+            max-width: 500px;
+        }
+    </style>
+</head>
+<body>
+<div style="width:100%;height:100vh;display:flex;justify-content: center;">
+    <div class="container">
+        <div class="ai-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="80" height="80" fill="currentColor" viewBox="0 0 16 16">
+                <path d="M8 0a8 8 0 1 0 0 16A8 8 0 0 0 8 0zm0 1a7 7 0 1 1 0 14A7 7 0 0 1 8 1zm0 2a5 5 0 1 0 0 10A5 5 0 0 0 8 3zm0 1a4 4 0 1 1 0 8A4 4 0 0 1 8 4zm0 1a3 3 0 1 0 0 6A3 3 0 0 0 8 5zm0 1a2 2 0 1 1 0 4A2 2 0 0 1 8 6zm0 1a1 1 0 1 0 0 2A1 1 0 0 0 8 7z"/>
+            </svg>
+        </div>
+        <h1>AI聊天室</h1>
+        <p class="welcome-text">欢迎来到智能聊天室，与AI进行有趣的对话交流</p>
+        <a href="{{ url_for('login') }}" class="btn btn-primary">前往登录</a>
+    </div>
+
+</div>
+</body>
+</html>
