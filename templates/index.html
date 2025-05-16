@@ -2,9 +2,9 @@
 <html lang="zh">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <title>AI聊天室</title>
-    <link rel="shortcut icon" href="../static/favicon.ico">
+    <link href="{{ url_for('static', filename='favicon.ico') }}" rel="icon">
     <link href="../static/css/bootstrap.css" rel="stylesheet">
     <style>
         body {
@@ -63,15 +63,36 @@
 <div style="width:100%;height:100vh;display:flex;justify-content: center;">
     <div class="container">
         <div class="ai-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" width="80" height="80" fill="currentColor" viewBox="0 0 16 16">
+            <svg fill="currentColor" height="80" viewBox="0 0 16 16" width="80" xmlns="http://www.w3.org/2000/svg">
                 <path d="M8 0a8 8 0 1 0 0 16A8 8 0 0 0 8 0zm0 1a7 7 0 1 1 0 14A7 7 0 0 1 8 1zm0 2a5 5 0 1 0 0 10A5 5 0 0 0 8 3zm0 1a4 4 0 1 1 0 8A4 4 0 0 1 8 4zm0 1a3 3 0 1 0 0 6A3 3 0 0 0 8 5zm0 1a2 2 0 1 1 0 4A2 2 0 0 1 8 6zm0 1a1 1 0 1 0 0 2A1 1 0 0 0 8 7z"/>
             </svg>
         </div>
         <h1>AI聊天室</h1>
         <p class="welcome-text">欢迎来到智能聊天室，与AI进行有趣的对话交流</p>
-        <a href="{{ url_for('login') }}" class="btn btn-primary">前往登录</a>
-    </div>
+        <a class="btn btn-primary" href="{{ url_for('login') }}">前往登录</a>
 
+        <!-- 使用表单和提交按钮来发送请求 -->
+        <!--        <form action="{{ url_for('test_api') }}" method="POST" style="display:inline;">-->
+<!--        <button class="btn btn-primary w- btn-login" type="submit">接口测试</button>-->
+        <!--        </form>-->
+    </div>
+    <script>
+    // 如果你不想使用表单，可以使用以下JavaScript代码通过AJAX发送请求
+    let obj={ username:"admin",password:"123456"}
+    document.querySelector('.btn-login').addEventListener('click', function(event) {
+            event.preventDefault(); // 阻止表单提交
+<!--            fetch('{{ url_for('test_api') }}', {-->
+            fetch('https://admin.luckynwa.top/proxyApi/login', {
+                method: 'POST',
+                headers: {
+                  'Content-Type': 'application/json'
+            },
+                body: JSON.stringify(obj) // 根据需要发送的数据
+         }).then(response => response.json())
+         .then(data => console.log(data))
+         .catch(error => console.error('Error:', error));
+     });
+    </script>
 </div>
 </body>
 </html>
